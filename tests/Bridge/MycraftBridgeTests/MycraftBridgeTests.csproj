@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <Platforms>x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Bridge sources are compiled directly into this test host; they are game-independent. -->
+    <Compile Include="..\..\..\src\Mycraft\Bridge\**\*.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="..\..\..\src\Mycraft\Demo\DemoConfig.cs" Link="DemoConfig.cs" />
+    <Compile Include="..\..\..\src\Mycraft\Demo\CombatEventLedger.cs" Link="CombatEventLedger.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,48 @@
+{
+  "required": true,
+  "package": "dev.mycraft.bridge.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "SessionWorldGuardMixin",
+    "SessionBlockTickMixin",
+    "SessionEntityTickMixin",
+    "SessionFluidTickMixin",
+    "SessionBlockPlacementMixin",
+    "ShieldDamageTraceMixin",
+    "HostServerInputMixin",
+    "HostServerUseMixin",
+    "SessionTntExplosionMixin",
+    "SessionTntPrimeMixin",
+    "SessionTntTerrainExplosionMixin",
+    "SessionWeaponProjectileTargetMixin",
+    "HostSpearTargetMixin",
+    "HostSpinTargetMixin",
+    "HostWeaponDamageGuardMixin",
+    "HostChannelingLightningMixin",
+    "HostLightningDamageMixin",
+    "LightningStateAccessor",
+    "HostLightningFireContactMixin",
+    "SessionPistonEventMixin",
+    "SessionPistonMovingMixin",
+    "MobTargetSelectorAccessor",
+    "SessionOwnedMobTargetMixin",
+    "SessionOwnedMobDamageMixin",
+    "SessionOwnedBoatInteractionMixin",
+    "SessionOwnedMobLootMixin",
+    "SessionOwnedMobPickupMixin",
+    "SessionWitherStructureMixin",
+    "SessionOwnedMobProjectileMixin",
+    "SessionOwnedMobVisibilityMixin",
+    "SessionOwnedMobExplosionMixin",
+    "SessionOwnedMobEffectMixin",
+    "SessionOwnedMobCloudMixin",
+    "SessionOwnedMobInteractionMixin",
+    "SessionOwnedMobHurtingProjectileMixin"
+  ],
+  "client": [
+    "HostWorldInputMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

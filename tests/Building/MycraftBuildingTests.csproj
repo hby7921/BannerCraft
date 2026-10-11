@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework><Nullable>enable</Nullable></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../src/Mycraft/Building/BlockGeometry.cs" Link="BlockGeometry.cs" />
+    <Compile Include="../../src/Mycraft/Building/BlockModelSnapshot.cs" Link="BlockModelSnapshot.cs" />
+    <Compile Include="../../src/Mycraft/Building/BlockSurfaceGeometry.cs" Link="BlockSurfaceGeometry.cs" />
+    <Compile Include="../../src/Mycraft/Demo/TntSceneState.cs" Link="TntSceneState.cs" />
+    <Compile Include="../../src/Mycraft/Demo/ParticleSilhouette.cs" Link="ParticleSilhouette.cs" />
+  </ItemGroup>
+</Project>

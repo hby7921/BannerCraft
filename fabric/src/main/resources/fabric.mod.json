@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "mycraft-bridge",
+  "version": "${version}",
+  "name": "BannerCraft Bridge",
+  "description": "Minecraft-side bridge for BannerCraft: real Minecraft items, combat, building and redstone in Mount & Blade II: Bannerlord custom battles.",
+  "authors": ["hby7921"],
+  "contact": {
+    "homepage": "https://github.com/hby7921/BannerCraft",
+    "sources": "https://github.com/hby7921/BannerCraft",
+    "issues": "https://github.com/hby7921/BannerCraft/issues"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "mixins": ["mycraft-bridge.client.mixins.json", "mycraft-bridge.mixins.json"],
+  "entrypoints": {
+    "main": ["dev.mycraft.bridge.MycraftBridge"],
+    "client": ["dev.mycraft.bridge.MycraftBridgeClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

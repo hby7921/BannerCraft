@@ -1,0 +1,84 @@
+plugins {
+	id 'net.fabricmc.fabric-loom' version "${loom_version}"
+}
+
+version = project.version
+group = project.group
+
+base {
+	archivesName = 'mycraft-bridge'
+}
+
+repositories {
+}
+
+loom {
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	// MC 26.x ships unobfuscated; no mappings layer and plain implementation scopes
+	// (matches SkyCraft upstream build.gradle).
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
+}
+
+processResources {
+	inputs.property "version", project.version
+	filesMatching("fabric.mod.json") {
+		expand "version": project.version
+	}
+}
+
+tasks.register('bridgeRegression', JavaExec) {
+	dependsOn testClasses
+	classpath = sourceSets.test.runtimeClasspath
+	mainClass = 'dev.mycraft.bridge.BridgeRegression'
+}
+tasks.named('check') { dependsOn bridgeRegression }
+// The dependency-free regression runner above owns these tests, rather than JUnit discovery.
+tasks.named('test') { failOnNoDiscoveredTests = false }
+
+tasks.register('vanillaInventoryRegression', JavaExec) {
+	dependsOn testClasses
+	classpath = sourceSets.test.runtimeClasspath
+	mainClass = 'dev.mycraft.bridge.VanillaInventoryRegression'
+}
+tasks.named('check') { dependsOn vanillaInventoryRegression }
+
+tasks.register('nativeShieldRegression', JavaExec) {
+	dependsOn testClasses
+	classpath = sourceSets.test.runtimeClasspath
+	mainClass = 'dev.mycraft.bridge.NativeShieldRegression'
+}
+tasks.named('check') { dependsOn nativeShieldRegression }
+
+// Runs production Fabric mixins in an isolated server/world, never the user's Prism save.
+fabricApi {
+    configureTests {
+        createSourceSet = true
+        modId = 'mycraft-bridge-test'
+        enableGameTests = true
+        enableClientGameTests = false
+    }
+}
+sourceSets {
+    gametest {
+        java.setSrcDirs(['src/testmod/java'])
+        resources.setSrcDirs(['src/testmod/resources'])
+    }
+}
+loom {
+    runs {
+        gameTest {
+            runDir 'build/run/tntGameTest'
+            vmArg "-Dbannercraft.entityGroundFixture=${project.file('../.build-game/entity-ground-fixtures.json').absolutePath}"
+            ideConfigGenerated false
+        }
+    }
+}

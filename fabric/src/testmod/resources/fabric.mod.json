@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "mycraft-bridge-test",
+  "version": "1.0.0",
+  "name": "Mycraft TNT Native Integration Tests",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-gametest": [
+      "dev.mycraft.bridge.TntNativeGameTest",
+      "dev.mycraft.bridge.WeaponNativeGameTest",
+      "dev.mycraft.bridge.RangedTargetGameTest",
+      "dev.mycraft.bridge.ProjectileRangeGameTest",
+      "dev.mycraft.bridge.PistonPlacementGameTest",
+      "dev.mycraft.bridge.MobBoatNativeGameTest",
+      "dev.mycraft.bridge.SkullPlacementGameTest",
+      "dev.mycraft.bridge.WitherGeneralMobNativeGameTest",
+      "dev.mycraft.bridge.ArmyMobNativeGameTest",
+      "dev.mycraft.bridge.EntityGroundNativeGameTest",
+      "dev.mycraft.bridge.RollingGroundNativeGameTest"
+    ]
+  },
+  "depends": {
+    "mycraft-bridge": "*",
+    "fabric-gametest-api-v1": "*"
+  }
+}

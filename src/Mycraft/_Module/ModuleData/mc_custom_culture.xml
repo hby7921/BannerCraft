@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SPCultures>
+  <Culture id="bannercraft_mc" name="{=!}MC" is_main_culture="false" can_have_settlement="false"
+           color="0xff263c28" color2="0xff80bd52"
+           cloth_alternative_color1="0xff80bd52" cloth_alternative_color2="0xff263c28"
+           banner_background_color1="0xff263c28" banner_foreground_color1="0xff80bd52"
+           banner_background_color2="0xff80bd52" banner_foreground_color2="0xff263c28"
+           faction_banner_key="11.4.123.4345.4345.764.764.1.0.0.163.0.5.512.512.764.764.1.0.0" />
+</SPCultures>

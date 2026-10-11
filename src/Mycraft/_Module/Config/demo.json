@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "modelTestLights": false,
+  "port": 38765,
+  "playerHurtFactor": 0.05,
+  "mcHitFactor": 1.0,
+  "mcCreatureDamageFactor": 5.0,
+  "groundY": 128.0,
+  "offsetX": 0.0,
+  "offsetZ": 0.0,
+  "scale": 1.0,
+  "yawOffsetDeg": 0.0
+}

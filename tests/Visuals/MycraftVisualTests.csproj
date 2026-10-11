@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework><Nullable>enable</Nullable></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../src/Mycraft/Visuals/VoxelGeometry.cs" Link="VoxelGeometry.cs" />
+    <Compile Include="../../src/Mycraft/Visuals/MinecraftGuiProjection.cs" Link="MinecraftGuiProjection.cs" />
+    <Compile Include="../../src/Mycraft/Visuals/HeldBlockModel.cs" Link="HeldBlockModel.cs" />
+    <Compile Include="../../src/Mycraft/Demo/MinecraftWeaponPresentation.cs" Link="MinecraftWeaponPresentation.cs" />
+    <Compile Include="../../src/Mycraft/Visuals/LightningGeometry.cs" Link="LightningGeometry.cs" />
+  </ItemGroup>
+</Project>

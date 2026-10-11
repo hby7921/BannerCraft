@@ -1,0 +1,11 @@
+<Prefab>
+  <Window>
+    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent">
+      <Children>
+        <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="BlankWhiteSquare" Color="#000000A0" IsVisible="@Loading" DoNotAcceptEvents="true" />
+        <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="@FrameWidth" SuggestedHeight="@FrameHeight" HorizontalAlignment="Center" VerticalAlignment="Center" Sprite="@FrameSprite" IsVisible="@Ready" DoNotAcceptEvents="true" />
+        <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="900" SuggestedHeight="64" HorizontalAlignment="Center" VerticalAlignment="Center" Text="@Status" IsVisible="@Loading" Brush="Order.Troop.HotKeyText" Brush.FontColor="#FFFFFFFF" DoNotAcceptEvents="true" />
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>

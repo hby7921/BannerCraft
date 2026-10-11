@@ -1,0 +1,39 @@
+<Project Sdk="Bannerlord.BUTRModule.Sdk/1.1.0.129">
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <RootNamespace>Mycraft</RootNamespace>
+    <AssemblyName>Mycraft</AssemblyName>
+    <BuildForWindows>true</BuildForWindows>
+    <BuildForWindowsStore>false</BuildForWindowsStore>
+    <ModuleId>Mycraft</ModuleId>
+    <ModuleName>BannerCraft</ModuleName>
+    <ModuleUrl>https://github.com/hby7921/BannerCraft</ModuleUrl>
+    <Version>0.1.0</Version>
+    <Platforms>x64</Platforms>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <HarmonyVersion>2.4.2</HarmonyVersion>
+    <GameDependencyVersion Condition="$(Configuration.Contains('Beta'))">v1.4.8</GameDependencyVersion>
+    <GameDependencyVersion Condition="'$(GameDependencyVersion)' == ''">v1.4.8</GameDependencyVersion>
+  </PropertyGroup>
+
+  <Import Project="Build.LocalGame.props" />
+
+  <ItemGroup>
+    <PackageReference Include="Bannerlord.ReferenceAssemblies.NavalDLC" Version="$(GameVersion).*-*" IncludeAssets="compile" Condition="'$(UseLocalGameReferences)' != 'true'" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="SubModule.cs" />
+    <Compile Include="Patches/**/*.cs" />
+    <Compile Include="UI/**/*.cs" />
+    <Compile Include="Bridge/**/*.cs" />
+    <Compile Include="Demo/**/*.cs" />
+    <Compile Include="Visuals/**/*.cs" />
+    <Compile Include="Building/**/*.cs" />
+  </ItemGroup>
+</Project>

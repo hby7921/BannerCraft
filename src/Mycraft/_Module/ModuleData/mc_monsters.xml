@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Monsters>
+  <Monster id="bannercraft_wither_skeleton" base_monster="human" standing_eye_height="2.12" crouch_eye_height="2.12">
+    <Capsules>
+      <body_capsule radius="0.35" pos1="0.0, 0.0, 2.05" pos2="0.0, 0.0, 0.35" />
+      <crouched_body_capsule radius="0.35" pos1="0.0, 0.0, 2.05" pos2="0.0, 0.0, 0.35" />
+    </Capsules>
+  </Monster>
+</Monsters>

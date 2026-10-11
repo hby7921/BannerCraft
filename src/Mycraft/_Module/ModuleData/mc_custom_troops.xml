@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NPCCharacters>
+  <!-- An original-army slot; the connected vanilla MC Wither supplies its model, AI, HP and damage. -->
+  <NPCCharacter id="bannercraft_mc_wither" name="{=!}凋零" default_group="Infantry"
+                level="60" age="25" occupation="Soldier" culture="Culture.bannercraft_mc">
+    <face>
+      <face_key_template value="BodyProperty.fighter_empire" />
+    </face>
+    <skills>
+      <skill id="Athletics" value="1" />
+    </skills>
+    <Equipments>
+      <EquipmentRoster civilian="false" />
+    </Equipments>
+  </NPCCharacter>
+</NPCCharacters>

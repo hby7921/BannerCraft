@@ -1,0 +1,68 @@
+<Prefab>
+  <Window>
+    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" IsVisible="@IsVisible" DoNotAcceptEvents="true">
+      <Children>
+        <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="760" SuggestedHeight="26" HorizontalAlignment="Center" VerticalAlignment="Top" PositionYOffset="8" Brush="Order.Troop.HotKeyText" Text="@McStatusText" IsVisible="@McMode" DoNotAcceptEvents="true" />
+        <ListPanel Id="McBossBars" WidthSizePolicy="Fixed" HeightSizePolicy="CoverChildren" SuggestedWidth="546" HorizontalAlignment="Center" VerticalAlignment="Top" PositionYOffset="42" StackLayout.LayoutMethod="VerticalTopToBottom" DataSource="{Bosses}" DoNotAcceptEvents="true">
+          <ItemTemplate>
+            <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="546" SuggestedHeight="48" DoNotAcceptEvents="true">
+              <Children>
+                <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="26" HorizontalAlignment="Center" VerticalAlignment="Top" Brush="Order.Troop.HotKeyText" Text="@BossText" DoNotAcceptEvents="true" />
+                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="546" SuggestedHeight="15" VerticalAlignment="Top" PositionYOffset="27" Sprite="mycraft_boss_purple_background" DoNotAcceptEvents="true" />
+                <Widget Id="McBossClip" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="@FillWidth" SuggestedHeight="15" HorizontalAlignment="Left" VerticalAlignment="Top" PositionYOffset="27" ClipContents="true" DoNotAcceptEvents="true">
+                  <Children><Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="546" SuggestedHeight="15" Sprite="mycraft_boss_purple_progress" DoNotAcceptEvents="true" /></Children>
+                </Widget>
+              </Children>
+            </Widget>
+          </ItemTemplate>
+        </ListPanel>
+        <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="546" SuggestedHeight="126" HorizontalAlignment="Center" VerticalAlignment="Bottom" PositionYOffset="-24" DoNotAcceptEvents="true">
+          <Children>
+            <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="66" SuggestedHeight="66" HorizontalAlignment="Left" VerticalAlignment="Bottom" PositionXOffset="-76" Sprite="mycraft_selector" IsVisible="@HasOffhand" DoNotAcceptEvents="true">
+              <Children>
+                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="48" SuggestedHeight="48" HorizontalAlignment="Center" VerticalAlignment="Center" Sprite="@OffhandSprite" DoNotAcceptEvents="true" />
+                <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="46" SuggestedHeight="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" MarginRight="5" PositionYOffset="-2" Brush="Order.Troop.HotKeyText" Text="@OffhandCountText" DoNotAcceptEvents="true" />
+              </Children>
+            </Widget>
+            <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="27" HorizontalAlignment="Left" VerticalAlignment="Bottom" PositionXOffset="6" PositionYOffset="-99" StackLayout.LayoutMethod="HorizontalLeftToRight" DataSource="{Armor}" IsVisible="@HasArmor" DoNotAcceptEvents="true">
+              <ItemTemplate>
+                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="24" SuggestedHeight="27" DoNotAcceptEvents="true">
+                  <Children><Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="27" SuggestedHeight="27" Sprite="@SpriteName" DoNotAcceptEvents="true" /></Children>
+                </Widget>
+              </ItemTemplate>
+            </ListPanel>
+            <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="27" HorizontalAlignment="Left" VerticalAlignment="Bottom" PositionXOffset="6" PositionYOffset="-72" StackLayout.LayoutMethod="HorizontalLeftToRight" DataSource="{Hearts}" DoNotAcceptEvents="true">
+              <ItemTemplate>
+                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="24" SuggestedHeight="27" DoNotAcceptEvents="true">
+                  <Children><Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="27" SuggestedHeight="27" Sprite="@SpriteName" DoNotAcceptEvents="true" /></Children>
+                </Widget>
+              </ItemTemplate>
+            </ListPanel>
+            <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="Fixed" SuggestedHeight="27" HorizontalAlignment="Right" VerticalAlignment="Bottom" PositionXOffset="-6" PositionYOffset="-72" StackLayout.LayoutMethod="HorizontalRightToLeft" DataSource="{Food}" IsVisible="@McMode" DoNotAcceptEvents="true">
+              <ItemTemplate>
+                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="24" SuggestedHeight="27" DoNotAcceptEvents="true">
+                  <Children><Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="27" SuggestedHeight="27" Sprite="@SpriteName" DoNotAcceptEvents="true" /></Children>
+                </Widget>
+              </ItemTemplate>
+            </ListPanel>
+            <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="546" SuggestedHeight="66" VerticalAlignment="Bottom" Sprite="mycraft_hotbar" DoNotAcceptEvents="true">
+              <Children>
+                <ListPanel WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="540" SuggestedHeight="60" HorizontalAlignment="Center" VerticalAlignment="Center" StackLayout.LayoutMethod="HorizontalLeftToRight" DataSource="{Slots}" DoNotAcceptEvents="true">
+                  <ItemTemplate>
+                    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="60" SuggestedHeight="60" DoNotAcceptEvents="true">
+                      <Children>
+                        <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="72" SuggestedHeight="72" HorizontalAlignment="Center" VerticalAlignment="Center" Sprite="mycraft_selector" IsVisible="@IsSelected" DoNotAcceptEvents="true" />
+                        <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="48" SuggestedHeight="48" HorizontalAlignment="Center" VerticalAlignment="Center" Sprite="@ItemSprite" IsVisible="@HasItem" DoNotAcceptEvents="true" />
+                        <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="46" SuggestedHeight="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" MarginRight="5" PositionYOffset="-2" Brush="Order.Troop.HotKeyText" Text="@CountText" DoNotAcceptEvents="true" />
+                      </Children>
+                    </Widget>
+                  </ItemTemplate>
+                </ListPanel>
+              </Children>
+            </Widget>
+          </Children>
+        </Widget>
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>
